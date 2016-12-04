@@ -46,8 +46,13 @@ class SSP():
           p += 1
         return sub_sum[self.t]
 
-start_time = time.time()
-
+for n in range(20,40):
+    start_time = time.time()
+    instance.random_yes_instance(n)
+    instance.positiveSubsetSum()
+    print instance.positiveSubsetSum()
+    for i in range(1):
+        print("%d\t%6f" % (n,(time.time() - start_time)/100))
+print "----------------------------------------------------"
 print instance.positiveSubsetSum()
 print("--- %s seconds ---" % (time.time() - start_time))
-print "----------------------------------------------------"
