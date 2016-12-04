@@ -46,29 +46,8 @@ class SSP():
           p += 1
         return sub_sum[self.t]
 
-    
-        
-
-    def subset(self):
-        result = []
-        def find(arr,t, path=()):
-            if not arr:
-                return
-            if arr[0] == t:
-                result.append(path + (arr[0],))
-            else:
-                find(arr[1:], t - arr[0], path + (arr[0],))
-                find(arr[1:], t, path)
-        find(self.S, self.t)
-        return result
-instance = SSP()
-instance.random_yes_instance(22)
-print( instance )
-
 start_time = time.time()
 
 print instance.positiveSubsetSum()
 print("--- %s seconds ---" % (time.time() - start_time))
 print "----------------------------------------------------"
-print instance.subset()
-print("--- %s seconds ---" % (time.time() - start_time))
