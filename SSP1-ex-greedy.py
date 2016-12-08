@@ -86,9 +86,9 @@ for n in range(10,20):
     instance.random_instance(n)
     start_time = time.time()
     #print instance.subsetsum()
-    print instance.greedy()
+    print (instance.greedy())
     for i in range(1):
         ("%d\t%6f" % (n,(time.time() - start_time)/100))
-    print "----------------------------------------------------"
+    print ("----------------------------------------------------")
     
     print("--- %s seconds ---" % (time.time() - start_time))
