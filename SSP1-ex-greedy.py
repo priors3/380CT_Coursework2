@@ -63,20 +63,14 @@ class SSP():
             total     = sum(candidate)
             print( "Trying: ", candidate, ", sum:", total )
 
-    def greedy(self):
-        for j in range (0, self.n):
-            sum=0
-            for i in range (j,self.n):
-                if self.t==0:
-                    return False
-                if self.S[i]==self.t:
-                    return True          
-                if (self.S[i]<=self.t-sum):
-                    sum=sum+self.S[i]
-                    if sum == self.t:
-                          return True  
-                                   
-        return False
+ def greedy_algorithm(self):
+        total = 0
+        for i in range(0, self.n):
+            if (total + self.S[i]<= self.t):
+                total = total + self.S[i]
+        #print (self.t, "Greedy: " +str(subsets))
+        return self.t-total
+
           
 instance = SSP()
 
