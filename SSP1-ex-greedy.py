@@ -63,7 +63,7 @@ class SSP():
             total     = sum(candidate)
             print( "Trying: ", candidate, ", sum:", total )
 
- def greedy_algorithm(self):
+    def greedy_algorithm(self):
         total = 0
         for i in range(0, self.n):
             if (total + self.S[i]<= self.t):
