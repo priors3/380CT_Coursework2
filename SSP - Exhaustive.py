@@ -27,7 +27,7 @@ class SSP():
         self.t = sum( sample(self.S, randint(0,n)) )
         self.n = len( self.S )   
 
-    def subset(self):
+    def exhaustive(self):
         result = []
         def find(arr,t, path=()):
             if not arr:
@@ -41,11 +41,11 @@ class SSP():
         return result
 instance = SSP()
 instance.random_yes_instance(5)
-instance.subset()
+instance.exhaustive()
 print( instance )
        
 
 start_time = time.time()
 
-print instance.subset()
+print instance.exhaustive()
 print("--- %s seconds ---" % (time.time() - start_time))
