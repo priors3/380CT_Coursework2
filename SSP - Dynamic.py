@@ -51,7 +51,7 @@ for n in range(20,40):
     instance.random_yes_instance(n)
     instance.positiveSubsetSum()
     print instance.positiveSubsetSum()
-    for i in range(1):
+    for i in range(100):
         print("%d\t%6f" % (n,(time.time() - start_time)/100))
 print "----------------------------------------------------"
 print instance.positiveSubsetSum()
