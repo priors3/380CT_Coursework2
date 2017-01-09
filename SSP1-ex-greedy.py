@@ -75,14 +75,18 @@ class SSP():
 instance = SSP()
 
 
-for n in range(10,20):
-    
-    instance.random_instance(n)
+for n in range(1, 101):
     start_time = time.time()
-    #print instance.subsetsum()
-    print (instance.greedy())
-    for i in range(1):
-        ("%d\t%6f" % (n,(time.time() - start_time)/100))
-    print ("----------------------------------------------------")
-    
-    print("--- %s seconds ---" % (time.time() - start_time))
+    count = 0
+    for i in range(100):
+        instance.random_yes_instance(n)
+        pr = instance.greedy()
+        count = count + pr
+        #if instance.greedy()==True:
+        
+    print("%d\t%6f" % (n, count/100))    
+    #print("%d\t%6f" % (n, (time.time() - start_time)/100))
+    #print ("%d\t%6f" % (n, count/n))
+print "----------------------------------------------------"
+#print count/100
+print("--- %s seconds ---" % (time.time() - start_time))
